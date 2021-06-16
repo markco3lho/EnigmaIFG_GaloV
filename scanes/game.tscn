@@ -39,7 +39,7 @@ extents = Vector2( 530.814, 5.54132 )
 [node name="cenario" parent="Cenário" instance=ExtResource( 1 )]
 
 [node name="Carta" parent="Cenário" instance=ExtResource( 11 )]
-position = Vector2( -224, 485 )
+position = Vector2( -136.997, 483.853 )
 
 [node name="barracas" type="YSort" parent="Cenário"]
 
@@ -62,7 +62,7 @@ position = Vector2( 850.887, 342.036 )
 position = Vector2( 852, 214 )
 
 [node name="marcos" parent="Cenário/barracas" instance=ExtResource( 12 )]
-position = Vector2( 339, 10 )
+position = Vector2( 324.584, 27.0681 )
 
 [node name="muro parte da frente" type="Sprite" parent="Cenário/barracas"]
 position = Vector2( 28.0232, 478.387 )

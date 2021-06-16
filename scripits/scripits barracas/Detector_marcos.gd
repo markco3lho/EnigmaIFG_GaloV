@@ -4,6 +4,7 @@ var can_interact = false
 const DIALOG = preload ("res://scanes/scanes dialog box/marcos_info.tscn")
 
 func _on_Area2D_body_entered(body):
+	print('marco')
 	if body.name == "player":
 		can_interact = true
 	pass 

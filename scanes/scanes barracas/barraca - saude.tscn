@@ -29,8 +29,8 @@ texture = ExtResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.55455, 6.68174 )
 texture = ExtResource( 2 )
-hframes = 3
 vframes = 2
+hframes = 3
 frame = 4
 
 [node name="Label1" type="Label" parent="."]
@@ -68,6 +68,5 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 3, 5 )
 shape = SubResource( 4 )
-
 [connection signal="body_entered" from="." to="." method="_on_saude_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_saude_body_exited"]
