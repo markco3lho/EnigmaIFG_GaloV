@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scanes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/cenarios/muro.png" type="Texture" id=2]
+[ext_resource path="res://sprites/cenarios/rampa de subida semi final.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cenarios/muro direito.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 176.358, 68.4302 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 164.104, 236.443 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 31.0827, 7.14968 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 353.894, 63.5079 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 158.248 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 457.046, 10 )
+
+[node name="cenario" type="Node2D"]
+
+[node name="rampa de subida semi final" type="Sprite" parent="."]
+position = Vector2( 486.15, -219.573 )
+scale = Vector2( 0.777553, 0.98852 )
+texture = ExtResource( 3 )
+
+[node name="muro direito" type="Sprite" parent="."]
+position = Vector2( 1080.7, 331.928 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grama" type="StaticBody2D" parent="muro direito"]
+position = Vector2( 0.444702, 240.002 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muro direito/grama"]
+shape = SubResource( 1 )
+
+[node name="muro" type="StaticBody2D" parent="muro direito"]
+position = Vector2( -1056.11, -305.531 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muro direito/muro"]
+position = Vector2( 1038.3, 224.592 )
+shape = SubResource( 2 )
+
+[node name="muro esquerdo" type="Sprite" parent="."]
+position = Vector2( -323.44, 308.76 )
+texture = ExtResource( 2 )
+
+[node name="muro" type="StaticBody2D" parent="muro esquerdo"]
+position = Vector2( 250, -210 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muro esquerdo/muro"]
+light_mask = 4
+position = Vector2( -280.104, 144.962 )
+scale = Vector2( 13.1111, 31.7619 )
+shape = SubResource( 3 )
+
+[node name="grama" type="StaticBody2D" parent="muro esquerdo"]
+position = Vector2( -52, 253 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muro esquerdo/grama"]
+light_mask = 4
+position = Vector2( 2, 2 )
+shape = SubResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -681.575, 439.695 )
+
+[node name="parede invisível" type="StaticBody2D" parent="."]
+position = Vector2( -706.688, 452.925 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede invisível"]
+light_mask = 4
+position = Vector2( -7.64624, -1.68674 )
+shape = SubResource( 5 )
+
+[node name="parede invisível3" type="StaticBody2D" parent="."]
+position = Vector2( -67.9248, 766.499 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede invisível3"]
+light_mask = 4
+position = Vector2( -7.64624, -1.68674 )
+shape = SubResource( 5 )
+
+[node name="parede invisível4" type="StaticBody2D" parent="."]
+position = Vector2( 978.736, 786.554 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede invisível4"]
+light_mask = 4
+position = Vector2( -7.64624, -1.68674 )
+shape = SubResource( 5 )
+
+[node name="parede invisível2" type="StaticBody2D" parent="."]
+position = Vector2( 1206.1, 465.331 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede invisível2"]
+light_mask = 4
+position = Vector2( 1.40723, -2.17935 )
+shape = SubResource( 5 )
+
+[node name="parede fundo" type="StaticBody2D" parent="."]
+position = Vector2( 484.826, 6.5546 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede fundo"]
+shape = SubResource( 6 )

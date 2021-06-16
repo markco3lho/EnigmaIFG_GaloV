@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scanes/scanes barracas/barraca - populacao.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scanes/scanes barracas/barraca - educacao.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scanes/scanes barracas/barraca - economia.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scanes/scanes barracas/barraca - trabalho.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scanes/scanes barracas/barraca - terri e ambiente.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scanes/scanes barracas/barraca - saude.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scanes/player.tscn" type="PackedScene" id=7]
+
+[node name="barracas" type="Node"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="população" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 93, 373 )
+
+[node name="educacao" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 94.389, 218.601 )
+
+[node name="economia" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 94.0993, 99.3937 )
+
+[node name="trabalho" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 853.388, 101.718 )
+
+[node name="terri e amb" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 852.704, 320.37 )
+
+[node name="saude" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 854, 210 )
+
+[node name="player" parent="YSort" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -387, 512 )
