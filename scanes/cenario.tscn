@@ -77,7 +77,7 @@ shape = SubResource( 4 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 visible = false
-position = Vector2( -681.575, 439.695 )
+position = Vector2( -584.356, 469.899 )
 
 [node name="parede invisível" type="StaticBody2D" parent="."]
 position = Vector2( -706.688, 452.925 )

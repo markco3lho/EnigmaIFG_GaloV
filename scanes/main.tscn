@@ -1,18 +1,23 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripits/buttonsair.gd" type="Script" id=1]
 [ext_resource path="res://scripits/buttonstart.gd" type="Script" id=2]
 [ext_resource path="res://sprites/menu/Céu.png" type="Texture" id=3]
 [ext_resource path="res://sprites/menu/logo teste.png" type="Texture" id=4]
 [ext_resource path="res://sprites/menu/butão verde .png" type="Texture" id=5]
-[ext_resource path="res://anim/terra.tres" type="Animation" id=6]
-[ext_resource path="res://sprites/menu/terra/terra rodando 4x12.png" type="Texture" id=7]
-[ext_resource path="res://anim/terra 8.tres" type="Animation" id=8]
-[ext_resource path="res://sprites/menu/terra/terra rodando 8x8.png" type="Texture" id=9]
+[ext_resource path="res://sprites/menu/CNPq logo.png" type="Texture" id=6]
+[ext_resource path="res://sprites/menu/terra final.png" type="Texture" id=7]
+[ext_resource path="res://sprites/menu/chave.png" type="Texture" id=8]
+[ext_resource path="res://sprites/menu/fundo nome.png" type="Texture" id=9]
 [ext_resource path="res://songs/menu-navigate-00.wav" type="AudioStream" id=10]
 [ext_resource path="res://songs/ui_click.wav" type="AudioStream" id=11]
-[ext_resource path="res://sprites/menu/IFG cortado Versão Final.png" type="Texture" id=12]
+[ext_resource path="res://sprites/menu/IFG V F.png" type="Texture" id=12]
 [ext_resource path="res://sprites/3 - Cloud_cover_1.png" type="Texture" id=13]
+[ext_resource path="res://music/1 Kubbi - Up In My Jam.mp3" type="AudioStream" id=14]
+[ext_resource path="res://sprites/menu/desfoque.png" type="Texture" id=15]
+[ext_resource path="res://scripits/buttoncreditos.gd" type="Script" id=16]
+[ext_resource path="res://sprites/menu/ENIGMA IFG.PNG" type="Texture" id=17]
+[ext_resource path="res://sprites/menu/fundo nome - Copia.png" type="Texture" id=18]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -28,7 +33,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/Dire = Vector2( 1, 0 )
-shader_param/Velocidade = 0.009
+shader_param/Velocidade = 0.008
 
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://fonts/ChiKareGo2.ttf"
@@ -39,45 +44,89 @@ font_data = SubResource( 3 )
 
 [node name="menuiniciar" type="Node2D"]
 
-[node name="céu" type="Sprite" parent="."]
+[node name="fundo" type="Node" parent="."]
+
+[node name="céu" type="Sprite" parent="fundo"]
 position = Vector2( 397.326, 195.689 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="nuvens" type="Sprite" parent="."]
+[node name="nuvens" type="Sprite" parent="fundo"]
 material = SubResource( 2 )
 position = Vector2( 405.397, 201.948 )
 scale = Vector2( 2.82788, 2.82788 )
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="ifg" type="Sprite" parent="."]
+[node name="ifg" type="Sprite" parent="fundo"]
 position = Vector2( 397.692, 224.62 )
 texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="logo teste2" type="Sprite" parent="."]
+[node name="desfoque" type="Sprite" parent="fundo"]
+position = Vector2( 397.697, 212.918 )
+scale = Vector2( 1.01732, 1.09809 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="terra final" type="Sprite" parent="fundo"]
+position = Vector2( 414.197, 139.995 )
+scale = Vector2( 1.11549, 1.11549 )
+texture = ExtResource( 7 )
+
+[node name="logo teste2" type="Sprite" parent="fundo"]
+visible = false
 position = Vector2( 391.087, 221.283 )
 texture = ExtResource( 4 )
 
-[node name="start" type="Button" parent="."]
+[node name="fundo nome - Copia" type="Sprite" parent="fundo"]
+position = Vector2( 373.379, 230.09 )
+texture = ExtResource( 18 )
+
+[node name="ENIGMA IFG" type="Sprite" parent="fundo"]
+position = Vector2( 378.049, 231.35 )
+texture = ExtResource( 17 )
+
+[node name="fundo nome" type="Sprite" parent="fundo"]
+visible = false
+position = Vector2( 374.375, 229.588 )
+texture = ExtResource( 9 )
+
+[node name="chave" type="Sprite" parent="fundo"]
+position = Vector2( 362.305, 148.351 )
+rotation = 2.11074
+scale = Vector2( 4.0131, 3.7988 )
+texture = ExtResource( 8 )
+
+[node name="botões" type="Node" parent="."]
+
+[node name="start" type="Button" parent="botões"]
 margin_left = 266.0
-margin_top = 281.0
+margin_top = 283.523
 margin_right = 502.0
-margin_bottom = 314.0
+margin_bottom = 316.523
 rect_pivot_offset = Vector2( -23, 0 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="sprite" type="Sprite" parent="start"]
+[node name="sprite" type="Sprite" parent="botões/start"]
 position = Vector2( 118, 14 )
 scale = Vector2( 3.2381, 2.08333 )
 texture = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="start"]
+[node name="Label" type="Label" parent="botões/start"]
 margin_left = 84.0
 margin_top = -1.0
 margin_right = 173.0
@@ -85,31 +134,34 @@ margin_bottom = 42.0
 custom_fonts/font = SubResource( 4 )
 text = "Iniciar"
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="menu_navigative" type="AudioStreamPlayer" parent="start"]
+[node name="menu_navigative" type="AudioStreamPlayer" parent="botões/start"]
 stream = ExtResource( 10 )
 volume_db = -28.0
 pitch_scale = 0.85
 
-[node name="sair" type="Button" parent="."]
-margin_left = 266.0
-margin_top = 337.0
-margin_right = 502.0
-margin_bottom = 370.0
+[node name="sair" type="Button" parent="botões"]
+margin_left = 266.171
+margin_top = 396.33
+margin_right = 502.171
+margin_bottom = 429.33
 rect_pivot_offset = Vector2( -23, 0 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="sprite" type="Sprite" parent="sair"]
+[node name="sprite" type="Sprite" parent="botões/sair"]
 position = Vector2( 118, 14 )
 scale = Vector2( 3.2381, 2.08333 )
 texture = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="sair"]
+[node name="Label" type="Label" parent="botões/sair"]
 margin_left = 96.0
 margin_top = -1.0
 margin_right = 185.0
@@ -121,46 +173,83 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ui_click" type="AudioStreamPlayer" parent="sair"]
+[node name="ui_click" type="AudioStreamPlayer" parent="botões/sair"]
 stream = ExtResource( 11 )
 volume_db = 5.0
 
-[node name="menu_navigative" type="AudioStreamPlayer" parent="sair"]
+[node name="menu_navigative" type="AudioStreamPlayer" parent="botões/sair"]
 stream = ExtResource( 10 )
 volume_db = -28.0
 pitch_scale = 0.85
 
-[node name="terra 4" type="Sprite" parent="."]
-visible = false
-position = Vector2( 378, 146 )
-scale = Vector2( 3.17941, 3.17941 )
-texture = ExtResource( 7 )
-hframes = 12
-vframes = 4
+[node name="creditos" type="Button" parent="botões"]
+margin_left = 266.059
+margin_top = 338.914
+margin_right = 502.059
+margin_bottom = 371.914
+rect_pivot_offset = Vector2( -23, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="terra 4"]
-autoplay = "terra"
-anims/terra = ExtResource( 6 )
+[node name="sprite" type="Sprite" parent="botões/creditos"]
+position = Vector2( 118, 14 )
+scale = Vector2( 3.2381, 2.08333 )
+texture = ExtResource( 5 )
 
-[node name="terra 8" type="Sprite" parent="."]
-visible = false
-position = Vector2( 386, 143 )
-scale = Vector2( 2.22656, 2.22656 )
-texture = ExtResource( 9 )
-hframes = 8
-vframes = 8
-frame = 49
+[node name="Label" type="Label" parent="botões/creditos"]
+margin_left = 68.0
+margin_top = -1.0
+margin_right = 180.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 4 )
+text = "Créditos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="terra 8"]
-autoplay = "terra 8"
-"anims/terra 8" = ExtResource( 8 )
+[node name="ui_click" type="AudioStreamPlayer" parent="botões/creditos"]
+stream = ExtResource( 11 )
+volume_db = 5.0
+
+[node name="menu_navigative" type="AudioStreamPlayer" parent="botões/creditos"]
+stream = ExtResource( 10 )
+volume_db = -28.0
+pitch_scale = 0.85
+
+[node name="perifericos" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="perifericos"]
+margin_left = 4.99011
+margin_top = 3.74802
+margin_right = 192.99
+margin_bottom = 33.748
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 4 )
+text = "Enigma ifg 1.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cnpq" type="Sprite" parent="perifericos"]
+position = Vector2( 757.899, 425.036 )
+scale = Vector2( 0.215212, 0.215212 )
+texture = ExtResource( 6 )
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -12.117
 autoplay = true
 
-[connection signal="mouse_entered" from="start" to="start" method="_on_Button_mouse_entered"]
-[connection signal="mouse_exited" from="start" to="start" method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="start" to="start" method="_on_Button_pressed"]
-[connection signal="mouse_entered" from="sair" to="sair" method="_on_Button_mouse_entered"]
-[connection signal="mouse_exited" from="sair" to="sair" method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="sair" to="sair" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="botões/start" to="botões/start" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="botões/start" to="botões/start" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="botões/start" to="botões/start" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="botões/sair" to="botões/sair" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="botões/sair" to="botões/sair" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="botões/sair" to="botões/sair" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]

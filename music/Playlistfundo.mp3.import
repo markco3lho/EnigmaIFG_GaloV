@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Playlistfundo.mp3-116e7b1e9480654d93d236dcefaa905d.mp3str"
+
+[deps]
+
+source_file="res://music/Playlistfundo.mp3"
+dest_files=[ "res://.import/Playlistfundo.mp3-116e7b1e9480654d93d236dcefaa905d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
