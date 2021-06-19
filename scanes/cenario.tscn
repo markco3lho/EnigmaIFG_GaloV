@@ -124,6 +124,7 @@ position = Vector2( 1.40723, -2.17935 )
 shape = SubResource( 5 )
 
 [node name="parede fundo" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 484.826, 6.5546 )
 __meta__ = {
 "_edit_group_": true

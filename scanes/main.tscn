@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripits/buttonsair.gd" type="Script" id=1]
 [ext_resource path="res://scripits/buttonstart.gd" type="Script" id=2]
-[ext_resource path="res://sprites/menu/fundo desfocado teste.png" type="Texture" id=3]
+[ext_resource path="res://sprites/menu/Céu.png" type="Texture" id=3]
 [ext_resource path="res://sprites/menu/logo teste.png" type="Texture" id=4]
 [ext_resource path="res://sprites/menu/butão verde .png" type="Texture" id=5]
 [ext_resource path="res://anim/terra.tres" type="Animation" id=6]
@@ -11,26 +11,54 @@
 [ext_resource path="res://sprites/menu/terra/terra rodando 8x8.png" type="Texture" id=9]
 [ext_resource path="res://songs/menu-navigate-00.wav" type="AudioStream" id=10]
 [ext_resource path="res://songs/ui_click.wav" type="AudioStream" id=11]
+[ext_resource path="res://sprites/menu/IFG cortado Versão Final.png" type="Texture" id=12]
+[ext_resource path="res://sprites/3 - Cloud_cover_1.png" type="Texture" id=13]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 Dire = vec2(1.0, 0.0);
+uniform float Velocidade = 0.02f;
+
+void fragment()
+{
+	COLOR = texture(TEXTURE, UV + (Dire * TIME * Velocidade));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/Dire = Vector2( 1, 0 )
+shader_param/Velocidade = 0.009
+
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 32
-font_data = SubResource( 1 )
+font_data = SubResource( 3 )
 
 [node name="menuiniciar" type="Node2D"]
 
-[node name="fundo" type="Sprite" parent="."]
-position = Vector2( 398, 223.25 )
-scale = Vector2( 1.07859, 1.00559 )
+[node name="céu" type="Sprite" parent="."]
+position = Vector2( 397.326, 195.689 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="nuvens" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 405.397, 201.948 )
+scale = Vector2( 2.82788, 2.82788 )
+texture = ExtResource( 13 )
+
+[node name="ifg" type="Sprite" parent="."]
+position = Vector2( 397.692, 224.62 )
+texture = ExtResource( 12 )
 
 [node name="logo teste2" type="Sprite" parent="."]
 position = Vector2( 391.087, 221.283 )
 texture = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="."]
 
 [node name="start" type="Button" parent="."]
 margin_left = 266.0
@@ -54,8 +82,8 @@ margin_left = 84.0
 margin_top = -1.0
 margin_right = 173.0
 margin_bottom = 42.0
-custom_fonts/font = SubResource( 2 )
-text = "Start"
+custom_fonts/font = SubResource( 4 )
+text = "Iniciar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,7 +114,7 @@ margin_left = 96.0
 margin_top = -1.0
 margin_right = 185.0
 margin_bottom = 62.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Sair
 "
 __meta__ = {
@@ -107,8 +135,8 @@ visible = false
 position = Vector2( 378, 146 )
 scale = Vector2( 3.17941, 3.17941 )
 texture = ExtResource( 7 )
-vframes = 4
 hframes = 12
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="terra 4"]
 autoplay = "terra"
@@ -119,8 +147,8 @@ visible = false
 position = Vector2( 386, 143 )
 scale = Vector2( 2.22656, 2.22656 )
 texture = ExtResource( 9 )
-vframes = 8
 hframes = 8
+vframes = 8
 frame = 49
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="terra 8"]
@@ -129,6 +157,7 @@ autoplay = "terra 8"
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 autoplay = true
+
 [connection signal="mouse_entered" from="start" to="start" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="start" to="start" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="start" to="start" method="_on_Button_pressed"]

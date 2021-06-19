@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terra rodando 4x12.png-c659f99e60b81bdd60f76fa8f2bbc087.stex"
+path="res://.import/3 - Cloud_cover_1.png-32b2d2a997c73a6a3277d52e2d158732.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/terra rodando 4x12.png"
-dest_files=[ "res://.import/terra rodando 4x12.png-c659f99e60b81bdd60f76fa8f2bbc087.stex" ]
+source_file="res://sprites/3 - Cloud_cover_1.png"
+dest_files=[ "res://.import/3 - Cloud_cover_1.png-32b2d2a997c73a6a3277d52e2d158732.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
