@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripits/buttonsair.gd" type="Script" id=1]
 [ext_resource path="res://scripits/buttonstart.gd" type="Script" id=2]
 [ext_resource path="res://sprites/menu/Céu.png" type="Texture" id=3]
-[ext_resource path="res://sprites/menu/logo teste.png" type="Texture" id=4]
 [ext_resource path="res://sprites/menu/butão verde .png" type="Texture" id=5]
 [ext_resource path="res://sprites/menu/CNPq logo.png" type="Texture" id=6]
 [ext_resource path="res://sprites/menu/terra final.png" type="Texture" id=7]
@@ -18,6 +17,7 @@
 [ext_resource path="res://scripits/buttoncreditos.gd" type="Script" id=16]
 [ext_resource path="res://sprites/menu/ENIGMA IFG.PNG" type="Texture" id=17]
 [ext_resource path="res://sprites/menu/fundo nome - Copia.png" type="Texture" id=18]
+[ext_resource path="res://scripits/fede in.gd" type="Script" id=19]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -42,7 +42,96 @@ font_path = "res://fonts/ChiKareGo2.ttf"
 size = 32
 font_data = SubResource( 3 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "fede_in"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("fede_in/ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("fede_in/ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("fede_in/ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("fede_in/ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fede_out"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("fede_in/ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("fede_in/ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("fede_in/ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("fede_in/ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+
 [node name="menuiniciar" type="Node2D"]
+visible = false
 
 [node name="fundo" type="Node" parent="."]
 
@@ -82,11 +171,6 @@ position = Vector2( 414.197, 139.995 )
 scale = Vector2( 1.11549, 1.11549 )
 texture = ExtResource( 7 )
 
-[node name="logo teste2" type="Sprite" parent="fundo"]
-visible = false
-position = Vector2( 391.087, 221.283 )
-texture = ExtResource( 4 )
-
 [node name="fundo nome - Copia" type="Sprite" parent="fundo"]
 position = Vector2( 373.379, 230.09 )
 texture = ExtResource( 18 )
@@ -96,7 +180,6 @@ position = Vector2( 378.049, 231.35 )
 texture = ExtResource( 17 )
 
 [node name="fundo nome" type="Sprite" parent="fundo"]
-visible = false
 position = Vector2( 374.375, 229.588 )
 texture = ExtResource( 9 )
 
@@ -239,6 +322,23 @@ position = Vector2( 757.899, 425.036 )
 scale = Vector2( 0.215212, 0.215212 )
 texture = ExtResource( 6 )
 
+[node name="fede_in" type="Node" parent="perifericos"]
+
+[node name="fede_in" type="AnimationPlayer" parent="perifericos/fede_in"]
+autoplay = "fede_in"
+anims/fede_in = SubResource( 5 )
+anims/fede_out = SubResource( 6 )
+script = ExtResource( 19 )
+
+[node name="ColorRect" type="ColorRect" parent="perifericos/fede_in/fede_in"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = -12.117
@@ -253,3 +353,5 @@ autoplay = true
 [connection signal="mouse_entered" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]
+[connection signal="pressed" from="botões/creditos" to="perifericos/fede_in/fede_in" method="_on_creditos_pressed"]
+[connection signal="animation_finished" from="perifericos/fede_in/fede_in" to="perifericos/fede_in/fede_in" method="_on_fede_in_animation_finished"]

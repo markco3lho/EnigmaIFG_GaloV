@@ -57,6 +57,7 @@ autoplay = true
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( -1.31087, 1.76974 )
 shape = SubResource( 3 )
+
 [connection signal="area_entered" from="." to="." method="_on_Barraca_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Area2D_area_exited"]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

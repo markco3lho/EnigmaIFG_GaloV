@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "creditos"
+length = 15.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0784314, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0588235, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimationPlayer/ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0588235, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimationPlayer/ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Label:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -129.011, -0.25, 0, 0.25, 0, -129.011, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3, 14.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Label:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 233.689, -0.25, 0, 0.25, 0, -260, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3, 14.5 )
+}
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = SubResource( 2 )
+
+[node name="creditos" type="Node2D"]
+position = Vector2( 176.398, 220.943 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "creditos"
+anims/creditos = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 796.0
+margin_bottom = 452.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = -129.011
+margin_top = 233.689
+margin_right = 578.989
+margin_bottom = 329.689
+custom_fonts/font = SubResource( 3 )
+text = "Projeto de iniciação científica na área de geografia
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -63,7 +63,7 @@ position = Vector2( 850.887, 342.036 )
 position = Vector2( 852, 214 )
 
 [node name="marcos" parent="Cenário/barracas" instance=ExtResource( 12 )]
-position = Vector2( 324.584, 27.0681 )
+position = Vector2( 325.114, 29.7168 )
 
 [node name="muro parte da frente" type="Sprite" parent="Cenário/barracas"]
 position = Vector2( 28.0232, 478.387 )
@@ -79,7 +79,7 @@ __meta__ = {
 polygon = PoolVector2Array( -11.6581, -11.955, -11.5852, -11.9442, 26.7667, -12.2415, 26.761, 18.95, 11.8782, 19.1075, 14.4794, 94.3552, -13.3001, 93.5615, -11.3444, 19.1673, -23.9721, 18.115, -24.4087, -12.4232 )
 
 [node name="player" parent="Cenário/barracas" instance=ExtResource( 2 )]
-position = Vector2( 370.344, 395.649 )
+position = Vector2( -219.431, 468.703 )
 
 [node name="bandeiras2" type="TileMap" parent="Cenário"]
 tile_set = SubResource( 1 )
