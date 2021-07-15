@@ -76,6 +76,7 @@ position = Vector2( 2, 2 )
 shape = SubResource( 4 )
 
 [node name="parede invisível" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -706.688, 452.925 )
 __meta__ = {
 "_edit_group_": true
@@ -87,6 +88,7 @@ position = Vector2( -7.64624, -1.68674 )
 shape = SubResource( 5 )
 
 [node name="parede invisível3" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -67.9248, 766.499 )
 __meta__ = {
 "_edit_group_": true
@@ -98,6 +100,7 @@ position = Vector2( -7.64624, -1.68674 )
 shape = SubResource( 5 )
 
 [node name="parede invisível4" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 978.736, 786.554 )
 __meta__ = {
 "_edit_group_": true
@@ -109,6 +112,7 @@ position = Vector2( -7.64624, -1.68674 )
 shape = SubResource( 5 )
 
 [node name="parede invisível2" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 1206.1, 465.331 )
 __meta__ = {
 "_edit_group_": true
@@ -127,6 +131,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parede fundo"]
+visible = false
 shape = SubResource( 6 )
 
 [node name="lixeira frente" type="Sprite" parent="."]

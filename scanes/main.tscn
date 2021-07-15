@@ -352,6 +352,6 @@ autoplay = true
 [connection signal="pressed" from="botões/sair" to="botões/sair" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]
 [connection signal="pressed" from="botões/creditos" to="perifericos/fede_in/fede_in" method="_on_creditos_pressed"]
+[connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="perifericos/fede_in/fede_in" to="perifericos/fede_in/fede_in" method="_on_fede_in_animation_finished"]
