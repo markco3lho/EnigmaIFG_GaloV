@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/cenarios/muro.png" type="Texture" id=2]
 [ext_resource path="res://sprites/cenarios/rampa de subida semi final.png" type="Texture" id=3]
@@ -19,9 +19,6 @@ extents = Vector2( 353.894, 63.5079 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 158.248 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 457.046, 10 )
 
 [node name="cenario" type="Node2D"]
 
@@ -122,17 +119,6 @@ __meta__ = {
 light_mask = 4
 position = Vector2( 1.40723, -2.17935 )
 shape = SubResource( 5 )
-
-[node name="parede fundo" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 480.069, 11.3114 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="parede fundo"]
-visible = false
-shape = SubResource( 6 )
 
 [node name="lixeira frente" type="Sprite" parent="."]
 position = Vector2( 711.667, 15.3399 )
