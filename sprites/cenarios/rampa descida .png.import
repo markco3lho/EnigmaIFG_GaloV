@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rampa de subida semi final.png-944c12897d17ff6bbfbf4ddc35c3784a.stex"
+path="res://.import/rampa descida .png-47051580b3621942fe703898a1e904ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cenarios/rampa de subida semi final.png"
-dest_files=[ "res://.import/rampa de subida semi final.png-944c12897d17ff6bbfbf4ddc35c3784a.stex" ]
+source_file="res://sprites/cenarios/rampa descida .png"
+dest_files=[ "res://.import/rampa descida .png-47051580b3621942fe703898a1e904ea.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

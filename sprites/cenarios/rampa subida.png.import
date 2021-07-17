@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HaruHappy.png-0957e694094850f4ce90c8d3aae6c0d2.stex"
+path="res://.import/rampa subida.png-649945799b944545bd0744318f266d64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/personagens/Haru/HaruHappy.png"
-dest_files=[ "res://.import/HaruHappy.png-0957e694094850f4ce90c8d3aae6c0d2.stex" ]
+source_file="res://sprites/cenarios/rampa subida.png"
+dest_files=[ "res://.import/rampa subida.png-649945799b944545bd0744318f266d64.stex" ]
 
 [params]
 

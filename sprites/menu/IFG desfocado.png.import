@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Haru.png-e1fc4da9acb7b2a03addfca49d95d6b3.stex"
+path="res://.import/IFG desfocado.png-d1880b0a2e944e4f7e4f89af7488be39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/personagens/Haru/Haru.png"
-dest_files=[ "res://.import/Haru.png-e1fc4da9acb7b2a03addfca49d95d6b3.stex" ]
+source_file="res://sprites/menu/IFG desfocado.png"
+dest_files=[ "res://.import/IFG desfocado.png-d1880b0a2e944e4f7e4f89af7488be39.stex" ]
 
 [params]
 

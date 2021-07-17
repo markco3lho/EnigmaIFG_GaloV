@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HaruNeutral.png-951f54ddec207fb117dd65f5954cd5ba.stex"
+path="res://.import/parte de traz.png-f7c682fe5d3dd778467f1c4c5f876436.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/personagens/Haru/HaruNeutral.png"
-dest_files=[ "res://.import/HaruNeutral.png-951f54ddec207fb117dd65f5954cd5ba.stex" ]
+source_file="res://sprites/cenarios/parte de traz.png"
+dest_files=[ "res://.import/parte de traz.png-f7c682fe5d3dd778467f1c4c5f876436.stex" ]
 
 [params]
 

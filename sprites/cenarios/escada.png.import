@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo teste.png-e4319b0a36f3d5fd17ed1ffd36ce1a57.stex"
+path="res://.import/escada.png-8192c0f7b08d6493b55aec7b148d798c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/logo teste.png"
-dest_files=[ "res://.import/logo teste.png-e4319b0a36f3d5fd17ed1ffd36ce1a57.stex" ]
+source_file="res://sprites/cenarios/escada.png"
+dest_files=[ "res://.import/escada.png-8192c0f7b08d6493b55aec7b148d798c.stex" ]
 
 [params]
 
