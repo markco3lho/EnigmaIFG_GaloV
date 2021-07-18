@@ -29,7 +29,8 @@ O Jogo ainda está em desenvolvimento, grande parte dele se encontra inacabado; 
 # EnglishVersion.md
 
 (Working)
-#Licença 
+
+# Licença 
 
 (Working)
 
