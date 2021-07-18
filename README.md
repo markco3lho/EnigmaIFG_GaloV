@@ -26,7 +26,7 @@ O Jogo ainda está em desenvolvimento, grande parte dele se encontra inacabado; 
 
 (Working)
 
-# EnglishVersion.md
+### EnglishVersion.md
 
 (Working)
 
