@@ -11,7 +11,7 @@
 [ext_resource path="res://songs/menu-navigate-00.wav" type="AudioStream" id=10]
 [ext_resource path="res://songs/ui_click.wav" type="AudioStream" id=11]
 [ext_resource path="res://sprites/menu/IFG V F.png" type="Texture" id=12]
-[ext_resource path="res://sprites/3 - Cloud_cover_1.png" type="Texture" id=13]
+[ext_resource path="res://sprites/menu/3 - Cloud_cover_1.png" type="Texture" id=13]
 [ext_resource path="res://music/1 Kubbi - Up In My Jam.mp3" type="AudioStream" id=14]
 [ext_resource path="res://sprites/menu/desfoque.png" type="Texture" id=15]
 [ext_resource path="res://scripits/buttoncreditos.gd" type="Script" id=16]

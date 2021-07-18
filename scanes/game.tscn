@@ -54,13 +54,13 @@ position = Vector2( 96.389, 212.601 )
 position = Vector2( 94.209, 89.4155 )
 
 [node name="trabalho" parent="Cenário/barracas" instance=ExtResource( 6 )]
-position = Vector2( 850, 93 )
+position = Vector2( 1093, 93 )
 
 [node name="terri e amb" parent="Cenário/barracas" instance=ExtResource( 8 )]
-position = Vector2( 850.887, 342.036 )
+position = Vector2( 1093.89, 342.036 )
 
 [node name="saude" parent="Cenário/barracas" instance=ExtResource( 9 )]
-position = Vector2( 852, 214 )
+position = Vector2( 1095, 214 )
 
 [node name="marcos" parent="Cenário/barracas" instance=ExtResource( 12 )]
 position = Vector2( 325.114, 29.7168 )
