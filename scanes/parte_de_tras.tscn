@@ -1,21 +1,149 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://sprites/cenarios/rampa de subida base.png" type="Texture" id=1]
+[ext_resource path="res://sprites/cenarios/corremao.png" type="Texture" id=1]
+[ext_resource path="res://sprites/cenarios/rampa subida.png" type="Texture" id=2]
+[ext_resource path="res://sprites/cenarios/parte de traz.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cenarios/rampa descida .png" type="Texture" id=4]
+[ext_resource path="res://sprites/cenarios/escada.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 233.437, 5.57401 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 34.6276, 5.20306 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30.8144, 4.21817 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.5782, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 183.658, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 15.6634, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 13.588, 115.667 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 226.193, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 183.924 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 120.641, 5.51946 )
 
 [node name="parte de trás" type="Node"]
 
-[node name="base" type="Sprite" parent="."]
-position = Vector2( 638.347, -266.603 )
-texture = ExtResource( 1 )
+[node name="escada" type="Sprite" parent="."]
+position = Vector2( 601.749, 31.5969 )
+scale = Vector2( 0.819126, 0.965779 )
+texture = ExtResource( 5 )
 
-[node name="ysort" type="YSort" parent="."]
+[node name="parte de traz" type="Sprite" parent="."]
+position = Vector2( 637.758, -384.073 )
+texture = ExtResource( 3 )
 
-[node name="m-direito" type="StaticBody2D" parent="ysort"]
-position = Vector2( 924.469, -36.718 )
+[node name="bandeira inferior" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( -35.6179, 207.408 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="shape" type="CollisionShape2D" parent="ysort/m-direito"]
-position = Vector2( 8.40912, 3.488 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/bandeira inferior"]
+position = Vector2( 26.0964, 4.27138 )
 shape = SubResource( 1 )
+
+[node name="bandeira se" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( -286.256, 34.2748 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/bandeira se"]
+shape = SubResource( 2 )
+
+[node name="bandeira sd" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( 197.556, 15.3506 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/bandeira sd"]
+position = Vector2( 0, 22 )
+shape = SubResource( 3 )
+
+[node name="coluna e" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( -237.647, 43.5794 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/coluna e"]
+shape = SubResource( 4 )
+
+[node name="corre mão" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( -40.1229, 32.7264 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/corre mão"]
+shape = SubResource( 5 )
+
+[node name="coluna d" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( 151.031, 38.7177 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/coluna d"]
+shape = SubResource( 6 )
+
+[node name="muro e" type="StaticBody2D" parent="parte de traz"]
+visible = false
+position = Vector2( -333.823, 103.225 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parte de traz/muro e"]
+shape = SubResource( 7 )
+
+[node name="rampa subida" type="Sprite" parent="."]
+position = Vector2( 270.737, -119.168 )
+texture = ExtResource( 2 )
+
+[node name="bandeira e muro" type="StaticBody2D" parent="rampa subida"]
+position = Vector2( -0.028656, 148.971 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rampa subida/bandeira e muro"]
+position = Vector2( -43.9394, 23.8379 )
+shape = SubResource( 8 )
+
+[node name="muro e" type="StaticBody2D" parent="rampa subida"]
+position = Vector2( 112.985, -10.83 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rampa subida/muro e"]
+shape = SubResource( 9 )
+
+[node name="rampa descida " type="Sprite" parent="."]
+position = Vector2( 909.467, -73.3967 )
+texture = ExtResource( 4 )
+
+[node name="m-direito" type="StaticBody2D" parent="rampa descida "]
+position = Vector2( -47.7383, 121.72 )
+
+[node name="shape" type="CollisionShape2D" parent="rampa descida /m-direito"]
+position = Vector2( 8.40912, 3.488 )
+shape = SubResource( 10 )
+
+[node name="corremao" type="Sprite" parent="."]
+position = Vector2( 630.618, -293.546 )
+texture = ExtResource( 1 )
