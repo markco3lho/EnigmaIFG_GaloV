@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://sprites/cenarios/corremao.png" type="Texture" id=1]
 [ext_resource path="res://sprites/cenarios/rampa subida.png" type="Texture" id=2]
 [ext_resource path="res://sprites/cenarios/parte de traz.png" type="Texture" id=3]
 [ext_resource path="res://sprites/cenarios/rampa descida .png" type="Texture" id=4]
 [ext_resource path="res://sprites/cenarios/escada.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 4.32349, 39.1526 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 233.437, 5.57401 )
@@ -28,13 +31,31 @@ extents = Vector2( 15.6634, 10 )
 extents = Vector2( 13.588, 115.667 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 226.193, 10 )
+extents = Vector2( 149.238, 10 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10, 183.924 )
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 8.38647, 139.682 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 88.6531, 7.68251 )
+
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 120.641, 5.51946 )
+extents = Vector2( 19.4357, 77.3178 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 19.6486, 59.5173 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 8.03302, 91.7358 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 7.46777, 13.3429 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 8.35162, 11.6393 )
 
 [node name="parte de trás" type="Node"]
 
@@ -42,6 +63,12 @@ extents = Vector2( 120.641, 5.51946 )
 position = Vector2( 601.749, 31.5969 )
 scale = Vector2( 0.819126, 0.965779 )
 texture = ExtResource( 5 )
+
+[node name="body" type="StaticBody2D" parent="escada"]
+
+[node name="shape" type="CollisionShape2D" parent="escada/body"]
+position = Vector2( 0, -1.03543 )
+shape = SubResource( 17 )
 
 [node name="parte de traz" type="Sprite" parent="."]
 position = Vector2( 637.758, -384.073 )
@@ -124,25 +151,50 @@ texture = ExtResource( 2 )
 position = Vector2( -0.028656, 148.971 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rampa subida/bandeira e muro"]
-position = Vector2( -43.9394, 23.8379 )
+position = Vector2( -25.6706, 23.8379 )
 shape = SubResource( 8 )
 
 [node name="muro e" type="StaticBody2D" parent="rampa subida"]
 position = Vector2( 112.985, -10.83 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rampa subida/muro e"]
+position = Vector2( 3.77975, 0 )
 shape = SubResource( 9 )
 
 [node name="rampa descida " type="Sprite" parent="."]
 position = Vector2( 909.467, -73.3967 )
 texture = ExtResource( 4 )
 
-[node name="m-direito" type="StaticBody2D" parent="rampa descida "]
-position = Vector2( -47.7383, 121.72 )
+[node name="body" type="StaticBody2D" parent="rampa descida "]
+position = Vector2( 61.5, 40.1187 )
 
-[node name="shape" type="CollisionShape2D" parent="rampa descida /m-direito"]
-position = Vector2( 8.40912, 3.488 )
+[node name="direito" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( 90.9875, -42.9013 )
+shape = SubResource( 11 )
+
+[node name="fundo" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -2.62012, -136.548 )
+shape = SubResource( 12 )
+
+[node name="meio d" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -1, 12 )
 shape = SubResource( 10 )
+
+[node name="meio e" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -112.227, -44.5222 )
+shape = SubResource( 13 )
+
+[node name="esquerdo" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -197, -12 )
+shape = SubResource( 14 )
+
+[node name="p 1" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -98.5, -118.119 )
+shape = SubResource( 15 )
+
+[node name="p 2" type="CollisionShape2D" parent="rampa descida /body"]
+position = Vector2( -216, 36 )
+shape = SubResource( 16 )
 
 [node name="corremao" type="Sprite" parent="."]
 position = Vector2( 630.618, -293.546 )

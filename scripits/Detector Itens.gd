@@ -3,7 +3,7 @@ extends Area2D
 var can_interact1 = false
 const DIALOG = preload ("res://scanes/scanes dialog box/carta_info.tscn")
 
-func _on_Area2D_body_entered(body):
+func _on_carta_body_entered(body):
 	print('carta')
 	if body.name == "player":
 		$Label1.visible = true
@@ -11,7 +11,7 @@ func _on_Area2D_body_entered(body):
 		can_interact1 = true
 	pass 
 
-func _on_Area2D_body_exited(body):
+func _on_carta_body_exited(body):
 	if body.name == "player":
 		$Label1.visible = false
 		$Label2.visible = false

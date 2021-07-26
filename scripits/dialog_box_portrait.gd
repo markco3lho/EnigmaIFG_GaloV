@@ -9,7 +9,7 @@ var phraseNum = 0
 var finished = false
  
 func _ready():
-	get_node('/root/game/Cenário/barracas/player').set_physics_process(false)
+	get_node('/root/game/node/ysort/player').set_physics_process(false)
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
 #	assert(dialog, "Dialog not found")
@@ -39,7 +39,7 @@ func getDialog() -> Array:
  
 func nextPhrase() -> void:
 	if phraseNum >= len(dialog):
-		get_node('/root/game/Cenário/barracas/player').set_physics_process(true)
+		get_node('/root/game/node/ysort/player').set_physics_process(true)
 		queue_free()
 		return
 	

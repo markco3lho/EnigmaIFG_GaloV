@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scanes/cenario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scanes/player.tscn" type="PackedScene" id=2]
@@ -10,11 +10,30 @@
 [ext_resource path="res://scanes/scanes barracas/barraca - terri e ambiente.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scanes/scanes barracas/barraca - saude.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scanes/scanes barracas/barraca - educacao.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scanes/carta_info.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scanes/resfirma.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scanes/marcos.tscn" type="PackedScene" id=12]
 [ext_resource path="res://music/Playlistfundo.mp3" type="AudioStream" id=13]
+[ext_resource path="res://sprites/cenarios/pt 2 subida.png" type="Texture" id=14]
+[ext_resource path="res://sprites/cenarios/virada.png" type="Texture" id=15]
+[ext_resource path="res://sprites/cenarios/lixeira frente.png" type="Texture" id=16]
+[ext_resource path="res://sprites/cenarios/m des.png" type="Texture" id=17]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 118.983, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 26.6689 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30.9795, 9.3828 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.76349, 32.4779 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 20.5293, 9.37206 )
+
+[sub_resource type="TileSet" id=6]
 0/name = "bandeirinha 67x26.png 0"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -30,73 +49,121 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 530.814, 5.54132 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 915.25, 5.54132 )
 
 [node name="game" type="Node2D"]
 
-[node name="Cenário" type="Node" parent="."]
+[node name="node" type="Node" parent="."]
 
-[node name="Carta" parent="Cenário" instance=ExtResource( 11 )]
-position = Vector2( -143.927, 499.602 )
+[node name="cenario" parent="node" instance=ExtResource( 1 )]
+position = Vector2( -0.890869, 0 )
 
-[node name="cenario" parent="Cenário" instance=ExtResource( 1 )]
+[node name="ysort" type="YSort" parent="node"]
 
-[node name="barracas" type="YSort" parent="Cenário"]
-
-[node name="população" parent="Cenário/barracas" instance=ExtResource( 7 )]
+[node name="população" parent="node/ysort" instance=ExtResource( 7 )]
 position = Vector2( 74.4082, 369.493 )
 
-[node name="educacao" parent="Cenário/barracas" instance=ExtResource( 10 )]
-position = Vector2( 75.389, 262.101 )
+[node name="educacao" parent="node/ysort" instance=ExtResource( 10 )]
+position = Vector2( 77.1708, 262.101 )
 
-[node name="economia" parent="Cenário/barracas" instance=ExtResource( 5 )]
+[node name="economia" parent="node/ysort" instance=ExtResource( 5 )]
 position = Vector2( 74.209, 159.415 )
 
-[node name="trabalho" parent="Cenário/barracas" instance=ExtResource( 6 )]
+[node name="trabalho" parent="node/ysort" instance=ExtResource( 6 )]
 position = Vector2( 1088.34, 163 )
 
-[node name="terri e amb" parent="Cenário/barracas" instance=ExtResource( 8 )]
+[node name="terri e amb" parent="node/ysort" instance=ExtResource( 8 )]
 position = Vector2( 1090.23, 348.036 )
 
-[node name="saude" parent="Cenário/barracas" instance=ExtResource( 9 )]
+[node name="saude" parent="node/ysort" instance=ExtResource( 9 )]
 position = Vector2( 1090.34, 255 )
 
-[node name="marcos" parent="Cenário/barracas" instance=ExtResource( 12 )]
+[node name="marcos" parent="node/ysort" instance=ExtResource( 12 )]
 position = Vector2( 472.265, 58.1394 )
 
-[node name="muro parte da frente" type="Sprite" parent="Cenário/barracas"]
+[node name="m des" type="Sprite" parent="node/ysort"]
+position = Vector2( 868.471, 39.0846 )
+texture = ExtResource( 17 )
+
+[node name="body" type="StaticBody2D" parent="node/ysort/m des"]
+position = Vector2( 1.89203, 4.83516 )
+
+[node name="shape" type="CollisionShape2D" parent="node/ysort/m des/body"]
+position = Vector2( 0.783936, 9.13171 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="node/ysort/m des/body"]
+position = Vector2( 111, -9 )
+shape = SubResource( 2 )
+
+[node name="lixeira frente" type="Sprite" parent="node/ysort/m des"]
+position = Vector2( -1.47693, 13.0607 )
+scale = Vector2( 1.699, 1.699 )
+texture = ExtResource( 16 )
+
+[node name="muro parte da frente" type="Sprite" parent="node/ysort"]
 position = Vector2( 10.2279, 494.533 )
 texture = ExtResource( 3 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Cenário/barracas/muro parte da frente"]
+[node name="StaticBody2D" type="StaticBody2D" parent="node/ysort/muro parte da frente"]
 position = Vector2( -2.00428, 34.6293 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cenário/barracas/muro parte da frente/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="node/ysort/muro parte da frente/StaticBody2D"]
 polygon = PoolVector2Array( -11.6581, -11.955, -11.5852, -11.9442, 26.7667, -12.2415, 26.761, 18.95, 11.8782, 19.1075, 14.4794, 94.3552, -13.3001, 93.5615, -11.3444, 19.1673, -23.9721, 18.115, -24.4087, -12.4232 )
 
-[node name="player" parent="Cenário/barracas" instance=ExtResource( 2 )]
-position = Vector2( -197.934, 483.971 )
+[node name="pt 2 subida" type="Sprite" parent="node/ysort"]
+position = Vector2( 424.221, 25.8356 )
+texture = ExtResource( 14 )
 
-[node name="bandeiras2" type="TileMap" parent="Cenário"]
-tile_set = SubResource( 1 )
+[node name="baixo" type="StaticBody2D" parent="node/ysort/pt 2 subida"]
+position = Vector2( -1.78479, 15.3464 )
+
+[node name="shape" type="CollisionShape2D" parent="node/ysort/pt 2 subida/baixo"]
+position = Vector2( 1.40335, 12.8401 )
+shape = SubResource( 3 )
+
+[node name="lado" type="StaticBody2D" parent="node/ysort/pt 2 subida"]
+position = Vector2( 21.5381, -4.49492 )
+
+[node name="shape" type="CollisionShape2D" parent="node/ysort/pt 2 subida/lado"]
+position = Vector2( 1.31104, -0.374577 )
+shape = SubResource( 4 )
+
+[node name="virada" type="Sprite" parent="node/ysort"]
+position = Vector2( 970.471, -104.738 )
+texture = ExtResource( 15 )
+
+[node name="shape" type="StaticBody2D" parent="node/ysort/virada"]
+position = Vector2( -0.0157471, -9.38342 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="node/ysort/virada/shape"]
+position = Vector2( 0.552856, 12.4719 )
+shape = SubResource( 5 )
+
+[node name="player" parent="node/ysort" instance=ExtResource( 2 )]
+position = Vector2( -279.618, 485.907 )
+
+[node name="resfirma" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1485.34, 375.185 )
+
+[node name="bandeiras2" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
 collision_layer = 8
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+tile_data = PoolIntArray( 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Cenário/bandeiras2"]
+[node name="body" type="StaticBody2D" parent="bandeiras2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/bandeiras2/StaticBody2D"]
-position = Vector2( 433.074, 669.372 )
-shape = SubResource( 2 )
+[node name="shape" type="CollisionShape2D" parent="bandeiras2/body"]
+position = Vector2( 615.074, 669.372 )
+shape = SubResource( 7 )
 
-[node name="musica_de_fundo" type="AudioStreamPlayer" parent="Cenário"]
+[node name="background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+volume_db = -9.087
 autoplay = true
