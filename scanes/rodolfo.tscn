@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/outros/Rodolfo1.png" type="Texture" id=1]
+[ext_resource path="res://scripits/detector_rodolfo.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "dormindo"
+length = 1.4
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 )
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.5, 12.875 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.625, 10.375 )
+
+[node name="rodolfo" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( -11.7683, -9.86003 )
+scale = Vector2( 2.14233, 2.14233 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 2
+
+[node name="animation" type="AnimationPlayer" parent="sprite"]
+autoplay = "dormindo"
+anims/dormindo = SubResource( 3 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 9.32164, -0.498307 )
+shape = SubResource( 1 )
+
+[node name="body" type="StaticBody2D" parent="."]
+position = Vector2( 21.875, 0 )
+
+[node name="shape" type="CollisionShape2D" parent="body"]
+position = Vector2( -22.875, 1.375 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_rodolfo_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_rodolfo_body_exited"]

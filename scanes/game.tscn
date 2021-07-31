@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scanes/cenario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scanes/player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://sprites/cenarios/virada.png" type="Texture" id=15]
 [ext_resource path="res://sprites/cenarios/lixeira frente.png" type="Texture" id=16]
 [ext_resource path="res://sprites/cenarios/m des.png" type="Texture" id=17]
+[ext_resource path="res://sprites/cenarios/lixeira lado.png" type="Texture" id=18]
+[ext_resource path="res://scanes/rodolfo.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118.983, 10 )
@@ -57,9 +59,14 @@ extents = Vector2( 915.25, 5.54132 )
 [node name="node" type="Node" parent="."]
 
 [node name="cenario" parent="node" instance=ExtResource( 1 )]
-position = Vector2( -0.890869, 0 )
+position = Vector2( -14.1884, 14.7958 )
 
 [node name="ysort" type="YSort" parent="node"]
+
+[node name="lixeira lado" type="Sprite" parent="node/ysort"]
+position = Vector2( 8.82426, 571.273 )
+scale = Vector2( 1.80677, 1.80677 )
+texture = ExtResource( 18 )
 
 [node name="população" parent="node/ysort" instance=ExtResource( 7 )]
 position = Vector2( 74.4082, 369.493 )
@@ -103,17 +110,17 @@ scale = Vector2( 1.699, 1.699 )
 texture = ExtResource( 16 )
 
 [node name="muro parte da frente" type="Sprite" parent="node/ysort"]
-position = Vector2( 10.2279, 494.533 )
+position = Vector2( 10.26, 494.592 )
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="node/ysort/muro parte da frente"]
-position = Vector2( -2.00428, 34.6293 )
+position = Vector2( -2.00428, 34.3144 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="node/ysort/muro parte da frente/StaticBody2D"]
-polygon = PoolVector2Array( -11.6581, -11.955, -11.5852, -11.9442, 26.7667, -12.2415, 26.761, 18.95, 11.8782, 19.1075, 14.4794, 94.3552, -13.3001, 93.5615, -11.3444, 19.1673, -23.9721, 18.115, -24.4087, -12.4232 )
+polygon = PoolVector2Array( -11.6581, -11.955, -11.5852, -11.9442, 26.7667, -12.2415, 26.761, 18.95, 11.8782, 19.1075, 12.4247, 80.2749, -12.6973, 80.5722, -11.3444, 19.1673, -23.7542, 18.5482, -24.4087, -12.4232 )
 
 [node name="pt 2 subida" type="Sprite" parent="node/ysort"]
 position = Vector2( 424.221, 25.8356 )
@@ -144,24 +151,27 @@ position = Vector2( -0.0157471, -9.38342 )
 position = Vector2( 0.552856, 12.4719 )
 shape = SubResource( 5 )
 
+[node name="rodolfo" parent="node/ysort" instance=ExtResource( 19 )]
+position = Vector2( -595.663, 499.466 )
+
 [node name="player" parent="node/ysort" instance=ExtResource( 2 )]
-position = Vector2( -279.618, 485.907 )
+position = Vector2( -544.273, 488.203 )
 
-[node name="resfirma" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1485.34, 375.185 )
-
-[node name="bandeiras2" type="TileMap" parent="."]
+[node name="bandeiras2" type="TileMap" parent="node"]
 tile_set = SubResource( 6 )
 collision_layer = 8
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0 )
 
-[node name="body" type="StaticBody2D" parent="bandeiras2"]
+[node name="body" type="StaticBody2D" parent="node/bandeiras2"]
 
-[node name="shape" type="CollisionShape2D" parent="bandeiras2/body"]
+[node name="shape" type="CollisionShape2D" parent="node/bandeiras2/body"]
 position = Vector2( 615.074, 669.372 )
 shape = SubResource( 7 )
+
+[node name="resfirma" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1466.77, 338.682 )
 
 [node name="background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )

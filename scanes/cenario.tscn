@@ -8,22 +8,22 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 158.248 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32.7802, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 33.9108, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 176.358, 68.4302 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 164.104, 236.443 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 31.0827, 7.14968 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 353.894, 63.5079 )
 
 [node name="cenario" type="Node2D"]
@@ -48,11 +48,6 @@ light_mask = 4
 position = Vector2( 631.117, 311.887 )
 shape = SubResource( 1 )
 
-[node name="p3" type="CollisionShape2D" parent="paredes/parede invisível"]
-light_mask = 4
-position = Vector2( 1677.78, 331.942 )
-shape = SubResource( 1 )
-
 [node name="p4" type="CollisionShape2D" parent="paredes/parede invisível"]
 light_mask = 4
 position = Vector2( 1914.2, 10.2267 )
@@ -65,7 +60,7 @@ texture = ExtResource( 3 )
 [node name="body" type="StaticBody2D" parent="paredes/bandeira e"]
 
 [node name="shape" type="CollisionShape2D" parent="paredes/bandeira e/body"]
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="bandeira d" type="Sprite" parent="paredes"]
 position = Vector2( 1103.1, 49.478 )
@@ -74,7 +69,7 @@ texture = ExtResource( 3 )
 [node name="body" type="StaticBody2D" parent="paredes/bandeira d"]
 
 [node name="shape" type="CollisionShape2D" parent="paredes/bandeira d/body"]
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="muro direito" type="Sprite" parent="paredes"]
 position = Vector2( 1318.31, 310.546 )
@@ -91,14 +86,14 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/muro direito/grama"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="muro" type="StaticBody2D" parent="paredes/muro direito"]
 position = Vector2( -1056.11, -305.531 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/muro direito/muro"]
 position = Vector2( 1038.3, 224.592 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="muro esquerdo" type="Sprite" parent="paredes"]
 position = Vector2( -341.24, 326.055 )
@@ -114,7 +109,7 @@ position = Vector2( 250, -210 )
 light_mask = 4
 position = Vector2( -280.104, 144.962 )
 scale = Vector2( 13.1111, 31.7619 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="grama" type="StaticBody2D" parent="paredes/muro esquerdo"]
 position = Vector2( -52, 253 )
@@ -122,4 +117,4 @@ position = Vector2( -52, 253 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/muro esquerdo/grama"]
 light_mask = 4
 position = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
