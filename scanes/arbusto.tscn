@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/cenarios/arbusto.png" type="Texture" id=1]
+
+[sub_resource type="TileSet" id=1]
+0/name = "arbusto.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22.5502, 7.00866 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 154.462 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 86.7657 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="arbusto" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 983041, 0, 0, 1048577, 0, 0, 1114113, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1245187, 0, 0, 1310723, 0, 0, 1376259, 0, 0, 1441795, 0, 0, 1507331, 0, 0, 1572867, 0, 0, 1638403, 0, 0, 1703939, 0, 0, 1769475, 0, 0 )
+
+[node name="body" type="StaticBody2D" parent="TileMap"]
+
+[node name="shape" type="CollisionShape2D" parent="TileMap/body"]
+position = Vector2( 10.3181, 6.3496 )
+shape = SubResource( 2 )
+
+[node name="shape2" type="CollisionShape2D" parent="TileMap/body"]
+position = Vector2( 30.411, 146.465 )
+shape = SubResource( 3 )
+
+[node name="shape3" type="CollisionShape2D" parent="TileMap/body"]
+position = Vector2( 64.4124, 372.266 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/body"]
+position = Vector2( 47.5262, 290.892 )
+shape = SubResource( 5 )

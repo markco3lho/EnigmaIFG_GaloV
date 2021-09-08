@@ -1,17 +1,19 @@
 [
     {"Name": "Marcos", "Emotion": "Feliz", "Text": "Opa Iae eu sou o Marcos, já me segue no insta @marcos_cs_ e depois me passa o seu hehe,"},
-    {"Name": "Marcos", "Emotion": "Neutro","Text": "A você veio pelas instruçoes sobre como funciona o enigma?"},
+    {"Name": "Marcos", "Emotion": "Neutro","Text": "A você veio pelas instruções do enigma?"},
     {"Name": "Marcos", "Emotion": "Feliz", "Text": "Tudooo bem,"},
     {"Name": "Marcos", "Emotion": "Neutro","Text": "Bom basicamente o Engima Funciona Com Links."},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "Cada Link vai te redirecionar para uma página no google drive,"},
-    {"Name": "Marcos", "Emotion": "Neutro","Text": "E nessa pagína vai ter um pdf com as intruçoes para passar de fase,"},
+    {"Name": "Marcos", "Emotion": "Neutro","Text": "E nessa pagína vai ter um pdf com as intruções para passar de fase,"},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "Essas intruções sempre vão te levar a descriptografar um link,"},
-    {"Name": "Marcos", "Emotion": "Neutro", "Text": "Calma que é tranquilo hehe."},
+    {"Name": "Marcos", "Emotion": "Feliz", "Text": "Calma que é tranquilo hehe."},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "Esses Links vão sempre te levando para a proxíma fase até vc chegar no tesouro Ifg."},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "Observação esses Links sempre começam com:"},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "https://cutt.ly/"},
     {"Name": "Marcos", "Emotion": "Feliz", "Text": "Lembra de anotar isso hehe."},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "Para ir para primeira fase digite no seu navegador o link"},
     {"Name": "Marcos", "Emotion": "Neutro", "Text": "https://cutt.ly/fase1ifg"},
-    {"Name": "Marcos", "Emotion": "Feliz", "Text": "Boa Sorte e Bom jogo"}
+    {"Name": "Marcos", "Emotion": "Feliz", "Text": "Boa Sorte e Bom jogo..."},
+    {"Name": "Marcos", "Emotion": "Neutro", "Text": "Ah tem uma página com intruções especificas de cada fase"}
+    {"Name": "Marcos", "Emotion": "Neutro", "Text": " https://cutt.ly/tutorialifg"}
 ]

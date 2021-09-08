@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scanes/cenario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scanes/player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://sprites/cenarios/m des.png" type="Texture" id=17]
 [ext_resource path="res://sprites/cenarios/lixeira lado.png" type="Texture" id=18]
 [ext_resource path="res://scanes/rodolfo.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scanes/arbusto.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118.983, 10 )
@@ -52,7 +53,7 @@ extents = Vector2( 20.5293, 9.37206 )
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 915.25, 5.54132 )
+extents = Vector2( 938.097, 5.54132 )
 
 [node name="game" type="Node2D"]
 
@@ -87,7 +88,7 @@ position = Vector2( 1090.23, 348.036 )
 position = Vector2( 1090.34, 255 )
 
 [node name="marcos" parent="node/ysort" instance=ExtResource( 12 )]
-position = Vector2( 472.265, 58.1394 )
+position = Vector2( 439.714, 42.4249 )
 
 [node name="m des" type="Sprite" parent="node/ysort"]
 position = Vector2( 868.471, 39.0846 )
@@ -155,7 +156,7 @@ shape = SubResource( 5 )
 position = Vector2( -595.663, 499.466 )
 
 [node name="player" parent="node/ysort" instance=ExtResource( 2 )]
-position = Vector2( -544.273, 488.203 )
+position = Vector2( 448.136, 93.3598 )
 
 [node name="bandeiras2" type="TileMap" parent="node"]
 tile_set = SubResource( 6 )
@@ -171,7 +172,11 @@ position = Vector2( 615.074, 669.372 )
 shape = SubResource( 7 )
 
 [node name="resfirma" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1466.77, 338.682 )
+position = Vector2( 1469.22, 43.9445 )
+
+[node name="arbusto" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1464.85, -8.49487 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )

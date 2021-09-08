@@ -1,8 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
-[sub_resource type="Animation" id=1]
-resource_name = "creditos"
-length = 15.0
+[ext_resource path="res://sprites/menu/Céu.png" type="Texture" id=1]
+[ext_resource path="res://sprites/menu/IFG V F.png" type="Texture" id=2]
+[ext_resource path="res://sprites/menu/3 - Cloud_cover_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/menu/desfoque.png" type="Texture" id=4]
+[ext_resource path="res://music/Way Home by Tokyo Music Walker .mp3" type="AudioStream" id=5]
+[ext_resource path="res://sprites/logos/cnpq.png" type="Texture" id=6]
+[ext_resource path="res://sprites/logos/ifg-valparaiso.png" type="Texture" id=7]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 Dire = vec2(1.0, 0.0);
+uniform float Velocidade = 0.02f;
+
+void fragment()
+{
+	COLOR = texture(TEXTURE, UV + (Dire * TIME * Velocidade));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/Dire = Vector2( 1, 0 )
+shader_param/Velocidade = 0.008
+
+[sub_resource type="Animation" id=3]
+length = 60.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("AnimationPlayer/ColorRect:color:r")
 tracks/0/interp = 1
@@ -10,8 +33,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0784314, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 40.3, 54.6, 59.9 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("AnimationPlayer/ColorRect:color:g")
@@ -20,8 +43,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0588235, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 40.3, 54.6, 59.8 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("AnimationPlayer/ColorRect:color:b")
@@ -30,8 +53,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0588235, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 40.3, 54.8, 59.5 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath("AnimationPlayer/ColorRect:color:a")
@@ -40,8 +63,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.579959, -0.25, 0, 0.25, 0, 0.579959, -0.25, 0, 0.25, 0, 0.579959, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 40.3, 54.8, 59.8 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("Label:rect_position:x")
@@ -50,8 +73,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( -129.011, -0.25, 0, 0.25, 0, -129.011, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3, 14.5 )
+"points": PoolRealArray( 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 40.3, 45, 50, 54.8 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath("Label:rect_position:y")
@@ -60,51 +83,242 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 233.689, -0.25, 0, 0.25, 0, -260, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3, 14.5 )
+"points": PoolRealArray( 458.205, -0.25, 0, 0.25, 0, -2203.52, -0.25, 0, 0.25, 0, -2500.61, -0.25, 0, 0.25, 0, -2750.61, -0.25, 0, 0.25, 0, -3050.61, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 40.3, 45, 50, 54.8 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("cnpq:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 9.4, 19.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("cnpq:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 573.198, -0.25, 0, 0.25, 0, -148.671, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 9.4, 19.6 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("ifg:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 592.733, -0.25, 0, 0.25, 0, 592.733, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 9.4, 19.6 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("ifg:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 573.834, -0.25, 0, 0.25, 0, -148.671, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 9.4, 19.6 )
 }
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 32
-font_data = SubResource( 2 )
+font_data = SubResource( 4 )
 
 [node name="creditos" type="Node2D"]
 position = Vector2( 176.398, 220.943 )
-
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_horizontal_guides_": [ 620.704, 237.537 ],
+"_edit_vertical_guides_": [ 232.097, 660.212 ]
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "creditos"
-anims/creditos = SubResource( 1 )
+[node name="animação" type="Node" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+[node name="fundo" type="Node" parent="animação"]
+
+[node name="céu" type="Sprite" parent="animação/fundo"]
+position = Vector2( 397.326, 195.689 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="nuvens" type="Sprite" parent="animação/fundo"]
+material = SubResource( 2 )
+position = Vector2( 405.397, 201.948 )
+scale = Vector2( 2.82788, 2.82788 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ifg" type="Sprite" parent="animação/fundo"]
+position = Vector2( 397.692, 224.62 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="desfoque" type="Sprite" parent="animação/fundo"]
+position = Vector2( 397.697, -1252.17 )
+scale = Vector2( 1.01732, 7.6533 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="animação"]
+autoplay = "creditos"
+anims/creditos = SubResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="animação/AnimationPlayer"]
 margin_left = -2.0
 margin_top = -1.0
 margin_right = 796.0
 margin_bottom = 452.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="animação"]
 anchor_right = 1.0
-margin_left = -129.011
-margin_top = 233.689
-margin_right = 578.989
-margin_bottom = 329.689
-custom_fonts/font = SubResource( 3 )
+margin_left = 40.0
+margin_top = 458.205
+margin_right = 42.0002
+margin_bottom = 3986.21
+rect_pivot_offset = Vector2( -292.158, 262.83 )
+custom_fonts/font = SubResource( 5 )
 text = "Projeto de iniciação científica na área de geografia
 
+Gamificação na Educação
+Conhecendo a Geografia de Valparaíso
+por meio de Jogos
+
+Supervisor do Projeto:
+Thiago Alves
+
+Orientadora:
+Dr. Danielle Pereira da Costa 
+
+Bolsista e Pesquisador:
+Marcos Paulo Coelho Souza
+
+Financiado e aprovado por:
+
+
+
+
+
+
+
+
+Programado por:
+Marcos C. Souza
+
+Arte de cenário por:
+ Marcos C. Souza
+
+Arte de Personagens por:
+ Marcos C. Souza
+
+Design de Menu por:
+ Marcos C. Souza
+
+Tesouro IFG por:
+@aqua._.marine._
+
+Trilha Sonora: 
+
+Kubbi   - Up in My Jam..............................................
+Pix      - No Destination............................................
+Pix      - No Muscle No Problem..............................
+Pix      - No Worries.................................................
+Pix      - Ooh! a Fly, wait... It isn't...........................
+Pix      - My Best Friend is a Dog............................
+
+Tokyo Music Walker - Way Home 
+sob a licença 
+Creative Commons (cc-by) 
+Música promovida pela BreakingCopyright:
+https://bit.ly/tokyo-walker-way-home
+
+Efeitos sonoros:
+freesound.org 
+
+Agradecimentos Especiais:
+
+ Galo 
+Site: galodev.net/
+
+comunidade godot 
+
+comunidade internacional godot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agradeço de Verdade aos amigos, colegas,
+professores e familiares. Por me apoiarem é
+estarem ao meu
+lado ao longo de mais um projeto.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vida não é boa nem má 
+Ela apenas é, e independente do que seja
+estamos vivos e só nos resta viver. MarcosCS 2021
+
+
+
+
+
+
 "
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="cnpq" type="Sprite" parent="animação"]
+position = Vector2( 300, 573.198 )
+scale = Vector2( 0.835121, 0.835121 )
+texture = ExtResource( 6 )
+
+[node name="ifg" type="Sprite" parent="animação"]
+position = Vector2( 592.733, 573.834 )
+scale = Vector2( 0.11803, 0.11803 )
+texture = ExtResource( 7 )
+
+[node name="backmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.058
+autoplay = true

@@ -17,5 +17,5 @@ func _on_Button_pressed():
 	$sprite.modulate.r = 0.5
 	$sprite.modulate.g = 0.5
 	$sprite.modulate.b = 0.5
-	
+	get_tree().change_scene("res://scanes/creditos.tscn")
 	pass 

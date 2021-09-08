@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Audio Revisado.mp3-b4ccfed0bbcaaf6693d039d8bf40a9ee.mp3str"
+
+[deps]
+
+source_file="res://music/Audio Revisado.mp3"
+dest_files=[ "res://.import/Audio Revisado.mp3-b4ccfed0bbcaaf6693d039d8bf40a9ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

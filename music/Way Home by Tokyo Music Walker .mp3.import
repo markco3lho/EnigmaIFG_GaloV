@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Way Home by Tokyo Music Walker .mp3-09ecbe6bbe5dcb76a1a3533791b6eff2.mp3str"
+
+[deps]
+
+source_file="res://music/Way Home by Tokyo Music Walker .mp3"
+dest_files=[ "res://.import/Way Home by Tokyo Music Walker .mp3-09ecbe6bbe5dcb76a1a3533791b6eff2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
