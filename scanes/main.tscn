@@ -305,14 +305,14 @@ pitch_scale = 0.85
 
 [node name="perifericos" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="perifericos"]
+[node name="versão" type="Label" parent="perifericos"]
 margin_left = 4.99011
 margin_top = 3.74802
 margin_right = 192.99
 margin_bottom = 33.748
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/font = SubResource( 4 )
-text = "Enigma ifg 1.0"
+text = "Enigma ifg 2.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -352,6 +352,6 @@ autoplay = true
 [connection signal="pressed" from="botões/sair" to="botões/sair" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="botões/creditos" to="botões/creditos" method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]
 [connection signal="pressed" from="botões/creditos" to="perifericos/fede_in/fede_in" method="_on_creditos_pressed"]
+[connection signal="pressed" from="botões/creditos" to="botões/creditos" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="perifericos/fede_in/fede_in" to="perifericos/fede_in/fede_in" method="_on_fede_in_animation_finished"]

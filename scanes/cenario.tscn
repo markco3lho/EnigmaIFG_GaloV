@@ -33,7 +33,7 @@ extents = Vector2( 353.894, 63.5079 )
 [node name="paredes" type="Node" parent="."]
 
 [node name="parede invisível" type="StaticBody2D" parent="paredes"]
-position = Vector2( -706.688, 452.925 )
+position = Vector2( -679.6, 448.515 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scanes/cenario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scanes/player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,11 @@
 [ext_resource path="res://sprites/cenarios/lixeira lado.png" type="Texture" id=18]
 [ext_resource path="res://scanes/rodolfo.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scanes/arbusto.tscn" type="PackedScene" id=20]
+[ext_resource path="res://sprites/cenarios/grama.png" type="Texture" id=21]
+[ext_resource path="res://sprites/cenarios/grama1.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Bonecos/arquivo escondido na firma.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Carta.png" type="Texture" id=24]
+[ext_resource path="res://scripits/carta.gd" type="Script" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118.983, 10 )
@@ -55,12 +60,27 @@ extents = Vector2( 20.5293, 9.37206 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 938.097, 5.54132 )
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 10, 12.2541 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 9 )
+
 [node name="game" type="Node2D"]
 
 [node name="node" type="Node" parent="."]
 
 [node name="cenario" parent="node" instance=ExtResource( 1 )]
-position = Vector2( -14.1884, 14.7958 )
+position = Vector2( -16.1907, 15.4632 )
+
+[node name="grama" type="Sprite" parent="node/cenario"]
+position = Vector2( -401.517, 935.889 )
+rotation = 3.14159
+texture = ExtResource( 21 )
 
 [node name="ysort" type="YSort" parent="node"]
 
@@ -131,7 +151,7 @@ texture = ExtResource( 14 )
 position = Vector2( -1.78479, 15.3464 )
 
 [node name="shape" type="CollisionShape2D" parent="node/ysort/pt 2 subida/baixo"]
-position = Vector2( 1.40335, 12.8401 )
+position = Vector2( -6.59665, 8.3401 )
 shape = SubResource( 3 )
 
 [node name="lado" type="StaticBody2D" parent="node/ysort/pt 2 subida"]
@@ -156,7 +176,12 @@ shape = SubResource( 5 )
 position = Vector2( -595.663, 499.466 )
 
 [node name="player" parent="node/ysort" instance=ExtResource( 2 )]
-position = Vector2( 448.136, 93.3598 )
+position = Vector2( -314.149, 485.514 )
+
+[node name="arquivo escondido na firma" type="Sprite" parent="node/ysort"]
+position = Vector2( 1234.55, 452.213 )
+scale = Vector2( 1.81028, 1.81028 )
+texture = ExtResource( 23 )
 
 [node name="bandeiras2" type="TileMap" parent="node"]
 tile_set = SubResource( 6 )
@@ -174,6 +199,54 @@ shape = SubResource( 7 )
 [node name="resfirma" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1469.22, 43.9445 )
 
+[node name="grama" type="Sprite" parent="resfirma"]
+position = Vector2( 335.68, 142.025 )
+scale = Vector2( 0.839573, 0.839573 )
+texture = ExtResource( 21 )
+
+[node name="grama2" type="Sprite" parent="resfirma/grama"]
+position = Vector2( 128.954, 191.128 )
+scale = Vector2( 1.19108, 1.19108 )
+texture = ExtResource( 21 )
+
+[node name="grama3" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -1817.5, 966.902 )
+rotation = -3.14159
+scale = Vector2( 1.28043, 1.25782 )
+texture = ExtResource( 21 )
+
+[node name="grama4" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -1013.73, 941.945 )
+rotation = -3.14159
+scale = Vector2( 1.19108, 1.19108 )
+texture = ExtResource( 21 )
+
+[node name="grama1" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -342.748, -330.034 )
+scale = Vector2( 1.27889, 1.41935 )
+texture = ExtResource( 22 )
+
+[node name="grama1" type="Sprite" parent="resfirma/grama/grama1"]
+position = Vector2( -1656.76, 10.3784 )
+texture = ExtResource( 22 )
+
+[node name="grama5" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -218.994, 944.147 )
+rotation = -3.14159
+scale = Vector2( 1.19108, 1.19108 )
+texture = ExtResource( 21 )
+
+[node name="grama6" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -3081.66, -0.828918 )
+rotation = 1.5708
+scale = Vector2( 1.19108, 1.19108 )
+texture = ExtResource( 22 )
+
+[node name="grama" type="Sprite" parent="resfirma/grama"]
+position = Vector2( -90.8109, -682.878 )
+scale = Vector2( 1.40626, 1.40626 )
+texture = ExtResource( 21 )
+
 [node name="arbusto" parent="." instance=ExtResource( 20 )]
 position = Vector2( 1464.85, -8.49487 )
 scale = Vector2( 1.5, 1.5 )
@@ -182,3 +255,43 @@ scale = Vector2( 1.5, 1.5 )
 stream = ExtResource( 13 )
 volume_db = -9.087
 autoplay = true
+
+[node name="carta" type="Area2D" parent="."]
+position = Vector2( -240.735, 500.543 )
+script = ExtResource( 25 )
+
+[node name="sprite" type="Sprite" parent="carta"]
+texture = ExtResource( 24 )
+
+[node name="shape" type="CollisionShape2D" parent="carta"]
+position = Vector2( -1.18921, 1.04056 )
+shape = SubResource( 8 )
+
+[node name="inte1" type="Label" parent="carta"]
+visible = false
+margin_left = 11.75
+margin_top = -7.0
+margin_right = 94.75
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Interagir (e)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inte2" type="Label" parent="carta"]
+visible = false
+margin_left = 12.5
+margin_top = -6.75
+margin_right = 95.5
+margin_bottom = 8.25
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Interagir (e)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="carta" to="carta" method="_on_carta_body_entered"]
+[connection signal="body_exited" from="carta" to="carta" method="_on_carta_body_exited"]

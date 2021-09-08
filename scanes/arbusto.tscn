@@ -44,11 +44,11 @@ position = Vector2( 10.3181, 6.3496 )
 shape = SubResource( 2 )
 
 [node name="shape2" type="CollisionShape2D" parent="TileMap/body"]
-position = Vector2( 30.411, 146.465 )
+position = Vector2( 26.1684, 145.935 )
 shape = SubResource( 3 )
 
 [node name="shape3" type="CollisionShape2D" parent="TileMap/body"]
-position = Vector2( 64.4124, 372.266 )
+position = Vector2( 58.0484, 372.62 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/body"]
